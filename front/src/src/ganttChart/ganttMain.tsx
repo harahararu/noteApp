@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import GanttFrame from "./compornents/ganttFrame";
+import { projectType, taskType } from "./type/dataType";
 
 const END_POINT = 'http://127.0.0.1:5000'
 
 const GanttMain:React.FC = () => {
-    const [data, setData] = useState({projects:[], tasks:[]})
+    const [data, setData] = useState<{projects:projectType[], tasks:taskType[]}>({projects:[], tasks:[]})
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
     useEffect(() => {
